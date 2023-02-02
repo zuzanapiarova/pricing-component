@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #666666;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+button{
+    cursor:pointer
+}
+
+body{
+    min-height: 100vh;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 4em;
+}
+
+.plan{
+    display: flex;
+    align-items: center;
+}
+
+.toggle{
+    margin: 1em 2em;
+    position:relative;
+    width: 60px;
+    height: 30px;
+    background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 10em;
+}
+
+.ball{
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 34px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle input{
+    opacity:1;
+    height:0;
+    width: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 80%;;
+    align-items: center;
+    padding: 3em;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2em;
+    transition: all .3s ease;
+    box-shadow: 0 10px 50px 10px rgba(28, 28, 28, 0.198);
+    margin: 1px;
+}
+
+section.selected{
+    background-image: linear-gradient(120deg, hsl(236, 100%, 90%), hsl(237, 63%, 64%));
+    height: 100%;
+}
+section.selected > *{
+    color: white;
+}
+
+section h1{
+    font-size: 1em;
+}
+
+section h2{
+    font-size: 2.2em;
+}
+
+section p{
+    border-bottom: 1px solid #66666647;
+}
+
+section > button{
+    background-image: linear-gradient(90deg, hsl(236, 100%, 90%), hsl(237, 63%, 64%));
+    width: 100%;
+    padding: 1.2em;
+    color: white;
+    font-size: 0.8em;
+    border:none;
+    border-radius: 10px;
+}
+
+section.selected > button{
+    background-color: white;
+    background-image: none;
+    color: #666666;
+
+}
+
+section button:hover{
+ 
+}
+
