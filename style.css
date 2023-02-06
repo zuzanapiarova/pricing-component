@@ -2,6 +2,8 @@
 
 *{
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: #666666;
@@ -15,6 +17,21 @@ button{
 
 body{
     min-height: 100vh;
+    position:relative;
+}
+
+.top{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 main{
@@ -22,6 +39,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 3em 4em;
 }
 
@@ -43,7 +61,7 @@ main{
     position: absolute;
     height: 22px;
     width: 22px;
-    left: 34px;
+    left: 4px;
     bottom: 4px;
     border-radius: 50%;
     background-color: white;
@@ -52,7 +70,7 @@ main{
 }
 
 .toggle input{
-    opacity:1;
+    opacity:0;
     height:0;
     width: 0;
 }
@@ -61,9 +79,13 @@ main{
     display: flex;
     flex-direction: row;
     width: 80%;
-    height: 80%;;
+    height: 80%;
     align-items: center;
+    justify-content: center;
     padding: 3em;
+    min-height: 500px;
+    max-height: 800px;
+    max-width: 1500px;
 }
 
 section{
@@ -74,16 +96,20 @@ section{
     justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
-    padding: 2em;
+    padding: 3%;
     transition: all .3s ease;
     box-shadow: 0 10px 50px 10px rgba(28, 28, 28, 0.198);
     margin: 1px;
+    background-color: hsl(240, 78%, 98%);
+
 }
 
 section.selected{
     background-image: linear-gradient(120deg, hsl(236, 100%, 90%), hsl(237, 63%, 64%));
     height: 100%;
+    padding: 5.7% 3%;
 }
+
 section.selected > *{
     color: white;
 }
@@ -93,31 +119,145 @@ section h1{
 }
 
 section h2{
-    font-size: 2.2em;
+    font-size: 3em;
 }
 
 section p{
+    padding: 1em;
     border-bottom: 1px solid #66666647;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
 }
 
-section > button{
+section .storage{
+    border-top: 1px solid #66666647;
+}
+
+section.selected p{
+    border-bottom: 1px solid #ffffff;
+}
+
+section.selected .storage{
+    border-top: 1px solid #ffffff;
+}
+
+section a{
+    width: 100%;
+}
+
+span{
+    font-size: 0.7em;
+}
+
+section.selected span{
+    color:white
+}
+
+.monthly{
+    color: lightgray;
+    transition: all 0.5s;
+}
+
+.annually{
+    color: #666666;
+    transition: all 0.3s;
+}
+
+button{
     background-image: linear-gradient(90deg, hsl(236, 100%, 90%), hsl(237, 63%, 64%));
     width: 100%;
     padding: 1.2em;
-    color: white;
+    color: hsl(240, 78%, 98%);
     font-size: 0.8em;
-    border:none;
     border-radius: 10px;
+    margin-top: 1em;
+    border: 1px white solid;
+    transition: color 0.5s ease, background-color 0.5s ease, border 0.5s ease;
+    box-sizing: border-box;
 }
 
-section.selected > button{
+section.selected button{
     background-color: white;
     background-image: none;
     color: #666666;
-
 }
 
-section button:hover{
- 
+button:hover{
+    background-color: white;
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+    border: 1px solid hsl(237, 63%, 64%);
 }
 
+section.selected button:hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+footer a{
+    text-decoration: none;
+    color:hsl(237, 63%, 64%);
+}
+
+@media (max-width: 1112px){
+    main{
+        width: 100%;
+        padding: 2em;
+        margin: 0;
+    }
+
+    .container{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 700px){
+
+    body{
+        padding: 2em 0;
+        height: 100%;
+        min-height: 100vh;
+        box-sizing:border-box;
+    }
+
+    main{     
+        height: 100%;   
+        width: 100vw;
+        padding: 3em 1em;
+
+    }
+
+    .container{
+        flex-direction: column;
+        width: 100%;
+        height: 80%;
+        justify-content: start;
+        padding: 2em;
+        min-height: unset;
+        max-height: '';
+
+    }
+
+    section{
+        width: 100%;
+        height: 30%;
+        padding: 2em;
+        margin: 1em;
+    }
+
+    section.selected{
+        background-image: linear-gradient(120deg, hsl(236, 100%, 90%), hsl(237, 63%, 64%));
+        height: 100%;
+        padding: 2em;
+    }
+
+    footer{
+        visibility:none;
+        opacity:0;
+    }
+}

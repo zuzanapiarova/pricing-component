@@ -6,54 +6,57 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
-  <script src="./main.js" defer></script>
+  <script type="text/javascript" src="./main.js" defer></script>
+  <script type="text/javascript" src="./plans.json"></script>
   <title>Pricing component</title>
 </head>
 
 <body>
+  <img class="top" src="./images/bg-top.svg" alt="waves illustration">
+  <img class="bottom" src="./images/bg-bottom.svg" alt="waves illustration">
   <main>
     <h1>Our pricing</h1>
     <div class="plan">
-      <p class="monthly">Monthly</p>
+      <p class="annually">Annually</p>
       <div class="toggle">
-        <input type="checkbox" checked></input>
+        <input type="checkbox"></input> <!-- checked=true is annually, checked = false is monthly - by default it is annually-->
         <div class="ball"></div>
       </div>
-      <p class="annually">Annually</p>
+      <p class="monthly">Monthly</p>
      </div>
 
     <div class="container">
       <section id="basic">
         <h1 class="name">Basic</h1>
-        <h2 class="price">&dollar; 200</h2>
-        <p class="storage">storage</p>
-        <p class="users">users allowed</p>
-        <p class="sendCapacity">Send up to</p>
-        <button>LEARN MORE</button>
+        <h2 class="price"><span>&dollar;</span> 199.99</h2>
+        <p class="storage">500 GB storage</p>
+        <p class="users">2 users allowed</p>
+        <p class="sendCapacity">Send up to 3 GB</p>
+        <a href="https:/www.google.com" target="_blank"><button>LEARN MORE</button></a>
       </section>
 
-      <section id="professional" class="selected">
+      <section id="professional" class="selected"> <!-- by default professional is selected-->
         <h1 class="name">Professional</h1>
-        <h2 class="price">&dollar; 400</h2>
-        <p class="storage">storage</p>
-        <p class="users">users allowed</p>
-        <p class="sendCapacity">Send up to</p>
-        <button>LEARN MORE</button>
+        <h2 class="price"><span>&dollar;</span> 249.99</h2>
+        <p class="storage">1 TB storage</p>
+        <p class="users">5 users allowed</p>
+        <p class="sendCapacity">Send up to 10 GB</p>
+        <a href="https:/www.google.com" target="_blank"><button >LEARN MORE</button></a>
       </section>
 
       <section id="master">
         <h1 class="name">Master</h1>
-        <h2 class="price">&dollar; 600</h2>
-        <p class="storage">storage</p>
-        <p class="users">users allowed</p>
-        <p class="sendCapacity">Send up to </p>
-        <button>LEARN MORE</button>
+        <h2 class="price"><span>&dollar;</span> 399.99</h2>
+        <p class="storage">2 TB storage</p>
+        <p class="users">10 users allowed</p>
+        <p class="sendCapacity">Send up to 20 GB</p>
+        <a href="https:/www.google.com" target="_blank"><button >LEARN MORE</button></a>
       </section>
     </div>
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/zuzanapiarova" target="_blank" >Zuzana</a>.
   </footer>
 </body>
 </html>
