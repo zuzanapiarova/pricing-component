@@ -178,13 +178,13 @@ button{
 }
 
 section.selected button{
-    background-color: white;
+    background-color: hsl(240, 78%, 98%);
     background-image: none;
-    color: #666666;
+    color: hsl(237, 63%, 64%);
 }
 
 button:hover{
-    background-color: white;
+    background-color: transparent;
     background-image: none;
     color: hsl(237, 63%, 64%);
     border: 1px solid hsl(237, 63%, 64%);

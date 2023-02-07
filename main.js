@@ -1,19 +1,21 @@
-//TODO
-//mobile view
-
 const sections = [...document.querySelectorAll('section')];
 const prices = [...document.querySelectorAll('section h2')];
 const toggleButton = document.querySelector('input[type="checkbox"]');
 const toggleField = document.querySelector('.toggle');
 const toggleBall = document.querySelector('.ball');
 const learnMoreBtns = [...document.querySelectorAll('section button')];
-console.log(learnMoreBtns)
 let isChecked;
 let annually;
 
-
-
 function selectPlan(e){
+       
+    //so section is not changed when user clicks on learn more button in a different section
+    for (let i = 0; i < learnMoreBtns.length; i++){
+        if(e.target == learnMoreBtns[i]){
+            return;
+        }
+    }
+
     sections.forEach( section => {
         if(section !== e.currentTarget){
             section.className = '';
@@ -35,15 +37,9 @@ function changePrice(){
     }
 }
 
-function togglePeriod(){
-    //so section is not changed when user clicks on learn more button in a different section
-    for (let i; i < learnMoreBtns.length; i++){
-        if(e.currentTarget == learnMoreBtns){
-            return;
-        }
-    }
- 
-    //true is on left, false is on right
+function togglePeriod(e){
+
+    //true is left, false is right
     isChecked = toggleButton.checked;
     annually = isChecked;
     console.log(isChecked, annually);
@@ -62,7 +58,6 @@ function togglePeriod(){
 
     changePrice();
 }
-
 
 toggleField.addEventListener('click', togglePeriod);
 sections.forEach( section => section.addEventListener('click', selectPlan));
